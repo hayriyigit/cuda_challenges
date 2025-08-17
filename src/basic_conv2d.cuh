@@ -1,4 +1,3 @@
-
 #pragma once
 
 // Function to launch CUDA vector addition
