@@ -3,7 +3,8 @@
 #include <iostream>
 #include <cstdio>
 
-__global__ void convolution_2d_kernel(const float *A, const float *B, float *C, int iSize, int kSize, int oSize)
+__global__ void convolution_2d_kernel(const float *input, const float *kernel, float *output,
+                                      int input_cols, int output_rows, int output_cols, int kernel_rows, int kernel_cols)
 {
     int col = blockDim.x * blockIdx.x + threadIdx.x;
     int row = blockDim.y * blockIdx.y + threadIdx.y;
